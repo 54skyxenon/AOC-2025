@@ -6,8 +6,9 @@ use warnings;
 
 my ($day) = split /\./, $0;
 open(my $in,  "<",  "input/$day.txt")  or die "Can't open input/$day.txt: $!";
-my @lines = <$in>;
 ## END BOILERPLATE
+
+my @lines = <$in>;
 
 sub part_1 {
     my (@lines) = @_;
