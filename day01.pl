@@ -4,8 +4,8 @@
 use strict;
 use warnings;
 
-my ($day) = split /\./, $0;
-open(my $in,  "<",  "input/$day.txt")  or die "Can't open input/$day.txt: $!";
+my ($day) = split(/\./, $0);
+open(my $in,  "<",  "input/$day.txt") or die "Can't open input/$day.txt: $!";
 ## END BOILERPLATE
 
 my @lines = <$in>;
