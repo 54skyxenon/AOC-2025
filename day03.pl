@@ -24,9 +24,9 @@ sub best_joltage {
     my $ans = 0;
     my $best_second_digit = "-inf";
 
-    foreach my $ch (split //, reverse $line) {
-        $ans = max($ans, 10 * $ch + $best_second_digit);
-        $best_second_digit = max($best_second_digit, $ch);
+    foreach my $digit (split //, reverse $line) {
+        $ans = max($ans, 10 * $digit + $best_second_digit);
+        $best_second_digit = max($best_second_digit, $digit);
     }
 
     return $ans;
@@ -37,14 +37,15 @@ sub best_joltage_subset {
     my ($line, $index, $digits_to_fill) = @_;
 
     # cannot fulfill quota if used up all digits already
-    return "" if $digits_to_fill == 0;
+    return 0 if $digits_to_fill == 0;
 
     # check if there's insufficient digits left
     return "-inf" if length($line) - $index < $digits_to_fill;
 
     # do the DP
     my $defer = best_joltage_subset($line, $index + 1, $digits_to_fill);
-    my $take_here = substr($line, $index, 1) . best_joltage_subset($line, $index + 1, $digits_to_fill - 1);
+    my $digit_here = substr($line, $index, 1);
+    my $take_here = 10 ** ($digits_to_fill - 1) * $digit_here + best_joltage_subset($line, $index + 1, $digits_to_fill - 1);
     return max($defer, $take_here);
 }
 
