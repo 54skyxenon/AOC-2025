@@ -6,7 +6,7 @@ use warnings;
 use List::Util 'sum';
 use List::Util 'max';
 use Memoize;
-use POSIX qw(INFINITY);
+use POSIX 'INFINITY';
 no warnings 'recursion';
 
 my ($day) = split /\./, $0;
