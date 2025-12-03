@@ -6,6 +6,7 @@ use warnings;
 use List::Util 'sum';
 use List::Util 'max';
 use Memoize;
+use POSIX qw(INFINITY);
 no warnings 'recursion';
 
 my ($day) = split /\./, $0;
@@ -22,7 +23,7 @@ for my $line (@lines) {
 sub best_joltage {
     my ($line) = @_;
     my $ans = 0;
-    my $best_second_digit = "-inf";
+    my $best_second_digit = -INFINITY;
 
     foreach my $digit (split //, reverse $line) {
         $ans = max($ans, 10 * $digit + $best_second_digit);
@@ -40,7 +41,7 @@ sub best_joltage_subset {
     return 0 if $digits_to_fill == 0;
 
     # check if there's insufficient digits left
-    return "-inf" if length($line) - $index < $digits_to_fill;
+    return -INFINITY if length($line) - $index < $digits_to_fill;
 
     # do the DP
     my $defer = best_joltage_subset($line, $index + 1, $digits_to_fill);
