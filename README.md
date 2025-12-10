@@ -28,3 +28,8 @@ To execute a specific Perl file I do:
 $ perl hello.pl
 Hello, World!
 ```
+
+I also have [glpk](https://www.gnu.org/software/glpk/) installed for some days needing it:
+```
+brew install glpk
+```
