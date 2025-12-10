@@ -89,7 +89,7 @@ sub fewest_presses_joltage {
         push @constraints, "$lhs = $rhs";
     }
 
-    # https://lpsolve.sourceforge.net/5.5/lp-format.htm
+    # https://web.mit.edu/lpsolve/doc/CPLEX-format.htm
     my $objective_fn = join(" + ", @vars);    
     my $lp = "Minimize\n  obj: $objective_fn\n\n";
 
