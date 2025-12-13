@@ -2,6 +2,14 @@
 
 I'm back for AoC 2025, this time in Perl!
 
+## Reflections
+
+I'm not a fan of how every type is context-dependent in Perl and I probably won't use it again personally/professionally. I will note that one strength Perl has is parsing text files well though.
+
+I struggled the most with:
+- Day 9 (Part 2)
+- Day 12
+
 ## Input
 All input is read from TXT files under the `inputs/` folder that you need to make prior to executing any code.
 
