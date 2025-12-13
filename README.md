@@ -2,6 +2,9 @@
 
 I'm back for AoC 2025, this time in Perl!
 
+<img width="1056" height="681" alt="Screenshot 2025-12-13 at 5 46 49 PM" src="https://github.com/user-attachments/assets/2ab43141-0541-4147-b314-8b1334412c8c" />
+
+
 ## Reflections
 
 I'm not a fan of how every type is context-dependent in Perl and I probably won't use it again personally/professionally. I will note that one strength Perl has is parsing text files well though.
